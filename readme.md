@@ -1,5 +1,7 @@
 # Community Database Application
 
+![alt text]({C3A88F46-618E-4A86-8D60-C9434BCE661A}.png)
+
 This is a simple Flask web application that allows users to search and view community database records stored in an Excel file. The application also provides functionality to download the filtered results as a PDF.
 
 ## Features
