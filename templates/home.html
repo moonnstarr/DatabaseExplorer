@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Community Database</h1>
+    
+    <form action="/search" method="POST">
+        <input type="text" name="state" placeholder="State" />
+        <input type="text" name="postal_code" placeholder="Postal Code" />
+        <input type="text" name="service_category" placeholder="Service Category" />
+        <input type="submit" value="Search" />
+    </form>
+    
+    <h2>Initial Results</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Details</th>
+                <th>State</th>
+                <th>Postal Code</th>
+                <th>Service Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in results.iterrows() %}
+            <tr>
+                <td>{{ row['Name'] }}</td>
+                <td>{{ row['Contact'] }}</td>
+                <td>{{ row['Details'] }}</td>
+                <td>{{ row['State'] }}</td>
+                <td>{{ row['Postal Code'] }}</td>
+                <td>{{ row['Service Category'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="/admin">Admin Panel</a>
+</body>
+</html>
